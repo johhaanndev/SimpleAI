@@ -18,11 +18,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
+            RaycastHit hit; // collision declaration
 
             Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(camRay, out hit, 100))
+            if (Physics.Raycast(camRay, out hit, 100)) 
             {
                 agent.destination = hit.point;
             }

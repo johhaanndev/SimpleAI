@@ -85,11 +85,13 @@ public class EnemyMovement_ex4 : MonoBehaviour
             alarmObject.SetActive(true);
             if(startChaseCount == 1)
             {
+                // set the reference position and add 1 to the count, this way the reference position won't be moving
                 initialChasePoint.transform.position = agent.transform.position;
                 startChaseCount++;
             }
             else
             {
+                // when it reaches the distance, change to ward off
                 if (Mathf.Abs((agent.transform.position - initialChasePoint.transform.position).magnitude) >= maxDistanceChase) 
                 {
                     state = State.wardOff;
@@ -106,11 +108,13 @@ public class EnemyMovement_ex4 : MonoBehaviour
 
             if (startWardOffCount == 1)
             {
+                // set the reference position and add 1 to the count, this way the reference position won't be moving
                 initialWardOffPoint.transform.position = agent.transform.position;
                 startWardOffCount++;
             }
             else
             {
+                // when it reaches the distance, change to wander
                 if (Mathf.Abs((agent.transform.position - initialWardOffPoint.transform.position).magnitude) >= maxDistanceWardOff)
                 {
                     state = State.wander;

@@ -36,8 +36,8 @@ public class EnemyMovement_ex2 : MonoBehaviour
 
         wanderTarget.Normalize();
         wanderTarget *= wanderRadius;
-        Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance);
-        Vector3 targetWorld = gameObject.transform.InverseTransformVector(targetLocal);
+        Vector3 targetLocal = wanderTarget + new Vector3(0, 0, wanderDistance); // target position of the Reynolds graph
+        Vector3 targetWorld = gameObject.transform.InverseTransformVector(targetLocal); // actual position in the space ground
 
         agent.SetDestination(targetWorld);
     }
